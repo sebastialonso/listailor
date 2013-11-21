@@ -1,9 +1,15 @@
 Listailor::Application.routes.draw do
+  
+  get "lists/index"
+  get "lists/show"
+  get "lists/delete"
+  devise_for :users
+  resources :lists
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
