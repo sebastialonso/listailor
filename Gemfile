@@ -30,6 +30,12 @@ gem 'rabl'
 #Authentication
 gem 'devise'
 
+#Forms
+gem 'simple_form'
+
+#Silence assets
+gem 'quiet_assets', :group => :development
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
