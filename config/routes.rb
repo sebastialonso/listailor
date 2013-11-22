@@ -1,9 +1,6 @@
 Listailor::Application.routes.draw do
   
-  get "lists/index"
-  get "lists/show"
-  get "lists/delete"
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :lists
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
