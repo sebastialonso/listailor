@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-#Listailor::Application.config.secret_key_base = '8f4c8811820520cdb3d3d80a76c670be0165835b48a48d10e44d32d66908fccd68d6937332889edb4e434b148cffae4788c4864d76d9a32e1755e0737aeb9214'
+Listailor::Application.config.secret_key_base = ENV["SECRET_TOKEN"]
