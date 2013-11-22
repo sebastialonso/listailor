@@ -45,6 +45,9 @@ gem 'omniauth-google-oauth2'
 #Forms
 gem 'simple_form'
 
+#Front-end design
+gem 'flat-ui-rails'
+
 #For environment variables
 gem 'figaro'
 

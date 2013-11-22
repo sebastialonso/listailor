@@ -49,6 +49,7 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    flat-ui-rails (0.0.2)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -156,6 +157,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   figaro
+  flat-ui-rails
   jquery-rails
   omniauth
   omniauth-google-oauth2

@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2]
-  has_many :lists
+  has_and_belongs_to_many :lists
 
   def self.find_for_google_oauth2(access_token, signed_in_resoruce=nil)
     data = access_token.info

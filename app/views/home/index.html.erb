@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
-  <p> Estás logeado, <%= current_user.username %>. Has fundado <%= current_user.lists.length %> listas | <%= link_to "Log out", destroy_user_session_path, :method => :delete %> </p>
+  <p><%= current_user.username %>. Has fundado <%= @owned_lists_count %> listas | <%= link_to "Log out", destroy_user_session_path, :method => :delete %> </p>
 <% else %>
-  <p><%= link_to "Sign up", new_user_registration_path %> o <%= link_to "Sign in", new_user_session_path %> | <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %></p>
+  <p><!--<%= link_to "Sign up", new_user_registration_path %> o <%= link_to "Sign in", new_user_session_path %> | --><%= link_to "Ingresa con Google", user_omniauth_authorize_path(:google_oauth2) %></p>
 <% end %>
 <h1>Listailor</h1>
 <p>Crea tus super listas públicas! Wow que bacán</p>
@@ -9,13 +9,18 @@
 <% if not @lists.empty? %>
   <% @lists.each do |list| %>
   <p> 
-    <b><%= list.name %></b> by <b><%= User.find(list.user_id).username %></b>
+    <b><%= link_to "#{list.name}", list_path(list) %></b> by <b><%= list.user.username %></b>
     <% if not list.tags.empty? %> 
-      <%  list.tags.each do |tag|%> 
-        <%= tag.name %>
+      <%  list.tags.each do |tag|%>
+         <%= tag.name %>
       <% end %>
     <% end %>
-    | <small><%= list.description %></small>
+    | <%= pluralize(list.users.length, "persona suscrita")%> 
+    | <small><%= list.description %></small> 
+    <% if user_signed_in? && !is_subscribed(current_user, list) %>
+      | <%= link_to "Join", join_path(:id => list.id) %>
+    <% end %>
+
   </p>
   <% end %>
 <% end %>
