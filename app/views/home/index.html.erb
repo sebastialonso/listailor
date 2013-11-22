@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <p> Estás logeado, <%= current_user.email %>. Has fundado <%= current_user.lists.length %> listas | <%= link_to "Log out", destroy_user_session_path, :method => :delete %> </p>
+  <p> Estás logeado, <%= current_user.username %>. Has fundado <%= current_user.lists.length %> listas | <%= link_to "Log out", destroy_user_session_path, :method => :delete %> </p>
 <% else %>
   <p><%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %></p>
 <% end %>

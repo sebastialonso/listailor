@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122151735) do
+ActiveRecord::Schema.define(version: 20131122164832) do
 
   create_table "lists", force: true do |t|
     t.datetime "created_at"
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20131122151735) do
     t.datetime "updated_at"
     t.integer  "lists_owned"
     t.string   "username"
-    t.integer  "uid"
     t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
