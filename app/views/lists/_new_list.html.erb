@@ -1,0 +1,6 @@
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.association :tags, collection: @tags, :as => :radio_buttons %>
+  <%= f.submit "Crear" %>
+<% end %>

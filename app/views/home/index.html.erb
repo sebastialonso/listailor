@@ -1,0 +1,21 @@
+<% if user_signed_in? %>
+  <p> Estás logeado, <%= current_user.email %>. Has fundado <%= current_user.lists.length %> listas | <%= link_to "Log out", destroy_user_session_path, :method => :delete %> </p>
+<% else %>
+  <p><%= link_to "Sign up", new_user_registration_path %> | <%= link_to "Log In", new_user_session_path %></p>
+<% end %>
+<h1>Listailor</h1>
+<p>Crea tus super listas públicas! Wow que bacán</p>
+<a><%= link_to "Crea una lista", new_list_path %> </a>
+<% if not @lists.empty? %>
+  <% @lists.each do |list| %>
+  <p> 
+    <b><%= list.name %></b> by <b><%= User.find(list.user_id).email %></b>
+    <% if not list.tags.empty? %> 
+      <%  list.tags.each do |tag|%> 
+        <%= tag.name %>
+      <% end %>
+    <% end %>
+    | <small><%= list.description %></small>
+  </p>
+  <% end %>
+<% end %>
