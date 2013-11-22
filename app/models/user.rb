@@ -11,18 +11,12 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user
     else
-      u = User.new(
-        :provider => auth.provider,
-        :uid => auth.uid,
-        :username => auth.info.name,
-        :email => auth.info.email,
-        :password => Devise.friendly_token.first(8))
-      if u.save
-        flash[:notice] = "Yay, usuario creado"
-      else
-        flash[:notice] = "Algo horrendo sucedio"
+      where(auth.slice(:provider, :uid)).first_or_create do |user|
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.username = auth.info.name
+        user.email = auth.info.email
       end
-      u
     end
   end
 end

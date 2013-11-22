@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <p> Estás logeado, <%= current_user.username %>. Has fundado <%= current_user.lists.length %> listas | <%= link_to "Log out", destroy_user_session_path, :method => :delete %> </p>
 <% else %>
-  <p><%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %></p>
+  <p><%= link_to "Sign up", new_user_registration_path %> o <%= link_to "Sign in", new_user_session_path %> | <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %></p>
 <% end %>
 <h1>Listailor</h1>
 <p>Crea tus super listas públicas! Wow que bacán</p>
@@ -9,7 +9,7 @@
 <% if not @lists.empty? %>
   <% @lists.each do |list| %>
   <p> 
-    <b><%= list.name %></b> by <b><%= User.find(list.user_id).email %></b>
+    <b><%= list.name %></b> by <b><%= User.find(list.user_id).username %></b>
     <% if not list.tags.empty? %> 
       <%  list.tags.each do |tag|%> 
         <%= tag.name %>
