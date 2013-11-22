@@ -44,6 +44,9 @@ gem 'omniauth-google-oauth2'
 #Forms
 gem 'simple_form'
 
+#For environment variables
+gem 'figaro'
+
 #Silence assets
 gem 'quiet_assets', :group => :development
 
