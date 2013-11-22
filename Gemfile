@@ -39,6 +39,7 @@ gem 'rabl'
 gem 'devise'
 
 #Google's OAuth2
+gem 'omniauth' 
 gem 'omniauth-google-oauth2'
 
 #Forms

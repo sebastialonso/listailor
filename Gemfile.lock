@@ -157,6 +157,7 @@ DEPENDENCIES
   devise
   figaro
   jquery-rails
+  omniauth
   omniauth-google-oauth2
   pg
   quiet_assets
