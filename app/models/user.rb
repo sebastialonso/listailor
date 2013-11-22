@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
       u = User.new(
         :provider => auth.provider,
         :uid => auth.uid,
-        :username => auth.info.name
+        :username => auth.info.name,
         :email => auth.info.email,
         :password => Devise.friendly_token.first(8))
       if u.save
