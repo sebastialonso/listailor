@@ -51,8 +51,21 @@
 }
 
 .user_data {
-  margin-left: 61%;
+  margin-left: 62%;
+  display: inline;
   color: rgb(255,255,255);
+}
+.user_data a img {
+  position: absolute;
+}
+
+.avatar img {
+  width: 30px;
+  border-radius: 7px;
+}
+
+.log_in {
+  margin-left: 80%;
 }
 
 .navbar_tag {
@@ -74,17 +87,3 @@
   margin-right: 10px;
   margin-top: 10px;
 }
-
-.log_in {
-  width: 33%;
-  background-color: rgb(35,35,35);
-  margin-right: 5px;
-  margin-top: 1px;
-}
-
-.avatar img {
-  width: 3%;
-  border-radius: 6px;
-  margin-right: 1%;
-}
-
