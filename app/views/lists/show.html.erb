@@ -14,8 +14,9 @@
     <% if vid.embeddable %>
       <%= vid.embed_html5.html_safe %>
     <% end %>
+    <br>
   <% end %>
 <% end %>
-<br>
+
 <%= render partial: "new_video" %>
 <%= link_to "Volver",  :root %>
