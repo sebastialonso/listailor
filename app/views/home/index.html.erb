@@ -15,8 +15,9 @@
          <%= tag.name %>
       <% end %>
     <% end %>
-    | <%= pluralize(list.users.length, "persona suscrita")%> 
+    | <%= pluralize_suscritas(list.users.length)%> 
     | <small><%= list.description %></small> 
+    | <%= pluralize(list.videos.count, 'video') %>
     <% if user_signed_in? && !is_subscribed(current_user, list) %>
       | <%= link_to "Join", join_path(:id => list.id) %>
     <% end %>

@@ -6,6 +6,8 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @videos = @list.videos
+    @new_video = Video.new
   end
 
   def create

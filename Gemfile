@@ -7,6 +7,9 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
 end
 
 group :production, :staging do
@@ -42,6 +45,9 @@ gem 'devise'
 gem 'omniauth' 
 gem 'omniauth-google-oauth2'
 
+#Wrapper for Youtube API
+gem 'youtube_it'
+
 #Forms
 gem 'simple_form'
 
@@ -50,9 +56,6 @@ gem 'flat-ui-rails'
 
 #For environment variables
 gem 'figaro'
-
-#Silence assets
-gem 'quiet_assets', :group => :development
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

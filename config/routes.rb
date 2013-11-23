@@ -2,6 +2,8 @@ Listailor::Application.routes.draw do
   
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :lists
+  resources :videos
+
   get 'join', to: 'lists#join'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

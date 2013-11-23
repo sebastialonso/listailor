@@ -1,0 +1,5 @@
+<%= simple_form_for @new_video do |f| %>
+  <%= f.input :url %>
+  <%= f.hidden_field :list_id, value: @list.id %>
+  <%= f.submit "Agregar" %>
+<% end %>

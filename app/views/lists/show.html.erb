@@ -1,3 +1,21 @@
 <h1><%= @list.name %></h1>
 <small> by <%= @list.user.username %></small>
 <p><%= @list.description %></p>
+
+<% if @videos.empty? %>
+  No hay videos en esta lista. 
+  Agrega uno!
+<% else %>
+  <% @videos.each do |vid| %>
+    <b><%= vid.title %></b> <small> uploaded by <%= vid.uploader %></small>
+    <br>
+    Likes:<%= vid.likes %> | Dislikes:<%= vid.dislikes %> | Ratings:<%= vid.rating%>
+    <br>
+    <% if vid.embeddable %>
+      <%= vid.embed_html5.html_safe %>
+    <% end %>
+  <% end %>
+<% end %>
+<br>
+<%= render partial: "new_video" %>
+<%= link_to "Volver",  :root %>

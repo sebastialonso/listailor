@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122214504) do
+ActiveRecord::Schema.define(version: 20131123005848) do
 
   create_table "lists", force: true do |t|
     t.datetime "created_at"
@@ -68,6 +68,14 @@ ActiveRecord::Schema.define(version: 20131122214504) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "url"
+    t.string   "title"
+    t.integer  "duration"
+    t.string   "uploader"
+    t.float    "rating"
+    t.integer  "likes"
+    t.integer  "dislikes"
+    t.boolean  "embeddable"
+    t.string   "embed_html5"
   end
 
 end
