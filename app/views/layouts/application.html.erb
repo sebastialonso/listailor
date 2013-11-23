@@ -6,9 +6,27 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+<div id="app_navbar" class="navbar-inverse">
+    <span class="brand">Listailor</span>
+          <% if user_signed_in? %>
+          <span class="user_data">
+            <span class="avatar"><%= image_tag(current_user.avatar.html_safe, :alt=>"It's you!") %></span>
+            <span class="user_name"><%= current_user.username %></span>
+            <span class="navbar_tag"> 
+              <i class="icon-list-alt"></i> <%= current_user.lists.length%> 
+            </span>
+          </span>
+            <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "log_out btn btn-danger navbar-btn pull-right"%> 
+          <% else %>
+            <%= link_to image_tag( "google_log_in_button.png", :alt => "Ingresa con tu cuenta de Google"), user_omniauth_authorize_path(:google_oauth2), :class => "pull-right log_in" %>
+          <% end %>
+</div>
 
+
+<div id="body" class="container">
 <%= yield %>
-
+</div>
 </body>
 </html>

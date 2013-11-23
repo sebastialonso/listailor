@@ -15,12 +15,18 @@ class User < ActiveRecord::Base
       if registered_user
         registered_user
       else
-        user = User.create(username: data["name"],
+        user = User.new(username: data["name"],
           provider: access_token.provider,
           email: data["email"],
           uid: access_token.uid,
-          password: Devise.friendly_token[0,20]
-          )
+          password: Devise.friendly_token[0,20])
+        if data["image"] == nil
+          user.avatar = "app/assets/images/default-avatar"
+        else
+          user.avatar = data["image"]
+        end 
+        user.save
+        user
       end
     end
   end

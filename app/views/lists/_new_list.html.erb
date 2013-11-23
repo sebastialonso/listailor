@@ -2,5 +2,5 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.association :tags, collection: @tags, :as => :radio_buttons %>
-  <%= f.submit "Crear" %>
+  <%= f.submit "Crear", :class => "btn btn-lg btn-success" %>
 <% end %>

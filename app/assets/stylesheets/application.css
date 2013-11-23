@@ -1,4 +1,4 @@
-/*
+  /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -10,4 +10,81 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap
+ *= require flat-ui
  */
+
+#body {
+  margin-top: 10px;
+}
+
+.brand {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 30px;
+  color: rgb(174,52,32);
+}
+
+.navbar_tag{
+  border-radius: 6px;
+  background-color: rgb(30,151,217);
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  line-height: 15px;
+  padding: 5px 5px 5px 5px;
+  position: relative;
+  vertical-align: middle;
+  -webkit-transition: 0.25s linear;
+  transition: 0.25s linear;
+}
+
+#app_navbar{
+  border-radius: 0px;
+  background-color: rgb(35,35,35);
+  padding-bottom: 10px;
+  box-shadow: 0 0 6px 0;
+}
+
+.user_data {
+  margin-left: 61%;
+  color: rgb(255,255,255);
+}
+
+.navbar_tag {
+  border-radius: 6px;
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 15px;
+  padding: 5px 5px 5px 5px;
+  position: relative;
+  vertical-align: middle;
+  -webkit-transition: 0.25s linear;
+  transition: 0.25s linear;
+}
+
+.log_out {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.log_in {
+  width: 33%;
+  background-color: rgb(35,35,35);
+  margin-right: 5px;
+  margin-top: 1px;
+}
+
+.avatar img {
+  width: 3%;
+  border-radius: 6px;
+  margin-right: 1%;
+}
+
