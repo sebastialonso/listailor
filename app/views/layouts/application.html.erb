@@ -31,10 +31,8 @@
               <%= link_to "Sign in Google+", user_omniauth_authorize_path(:google_oauth2), :class => "btn btn-danger pull_right log_in" %>
             </span>
           <% end %>
-</div>
-
-
-<div id="body" class="container">
+</div><div id="body" class="container">
+<%= render 'layouts/messages' %>
 <%= yield %>
 </div>
 </body>
