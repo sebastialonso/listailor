@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
           uid: access_token.uid,
           password: Devise.friendly_token[0,20])
         if data["image"] == nil
-          user.avatar = "app/assets/images/default-avatar"
+          user.avatar = ""
         else
           user.avatar = data["image"]
         end 
