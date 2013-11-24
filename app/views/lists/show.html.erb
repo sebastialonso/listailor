@@ -1,22 +1,26 @@
-<h1><%= @list.name %></h1>
-<small> by <%= @list.user.username %></small>
-<p><%= @list.description %></p>
-
-<% if @videos.empty? %>
-  No hay videos en esta lista. 
-  Agrega uno!
-<% else %>
-  <% @videos.each do |vid| %>
-    <b><%= vid.title %></b> <small> uploaded by <%= vid.uploader %></small>
-    <br>
-    Likes:<%= vid.likes %> | Dislikes:<%= vid.dislikes %> | Ratings:<%= vid.rating%>
-    <br>
-    <% if vid.embeddable %>
-      <%= vid.embed_html5.html_safe %>
+<div class="row">
+  <div class="span4">
+    <h1><%= @list.name %></h1>
+    <small> by <%= @list.user.username %></small>
+    <p><%= @list.description %></p>
+    <% if not @videos.empty? %>
+      <% @videos.each do |vid| %>
+        <%= vid.title %> <%= vid.duration %> Likes: <%= vid.likes %>
+        <br />
+      <% end %>
+      
     <% end %>
-    <br>
-  <% end %>
-<% end %>
+  </div>
+  <div class="span8">
+    <h3>Playlist</h3>
+    <% if @videos.empty? %>
+      No hay videos en esta lista. 
+      Agrega uno!
+    <% else %>
+      <div id='player'></div>
+    <% end %>
+  </div>
+</div>
 
 <%= render partial: "new_video" %>
 <%= link_to "Volver", :root, :class => "btn btn-lg btn-inverse" %>

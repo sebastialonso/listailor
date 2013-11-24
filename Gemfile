@@ -50,6 +50,9 @@ gem 'omniauth-google-oauth2'
 #Wrapper for Youtube API
 gem 'youtube_it'
 
+#Ruby variable to Javascript
+gem 'gon'
+
 #Forms
 gem 'simple_form'
 
@@ -57,7 +60,8 @@ gem 'simple_form'
 gem 'figaro'
 
 #Front-end design
-gem 'flatui-rails'
+#gem 'flatui-rails'
+gem 'flatui'
 gem 'twitter-bootstrap-rails'
 gem "less-rails"
 

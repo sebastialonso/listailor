@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131123163956) do
+ActiveRecord::Schema.define(version: 20131124205900) do
 
   create_table "lists", force: true do |t|
     t.datetime "created_at"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20131123163956) do
     t.integer  "dislikes"
     t.boolean  "embeddable"
     t.string   "embed_html5"
+    t.string   "yid"
   end
 
 end

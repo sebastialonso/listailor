@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jQuery.tubeplayer
+//= require jQuery.tubeplayer.min
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .

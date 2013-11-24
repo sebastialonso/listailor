@@ -34,8 +34,6 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (2.2.2.0)
-      sass (~> 3.2)
     builder (3.1.4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -63,10 +61,10 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
-    flatui-rails (0.0.4)
-      bootstrap-sass (= 2.2.2)
-      railties (>= 3.1)
-      sass-rails (>= 3.2.0)
+    flatui (0.0.1)
+    gon (4.1.1)
+      actionpack (>= 2.3.0)
+      json
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -208,7 +206,8 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   figaro
-  flatui-rails
+  flatui
+  gon
   jquery-rails
   less-rails
   omniauth

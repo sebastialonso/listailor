@@ -4,6 +4,7 @@ class VideosController < ApplicationController
     list = List.find(video_params[:list_id])
     video_data = @@client.video_by(video_params[:url])
     video = Video.new(:url => video_params[:url],
+      :yid => video_data.unique_id,
       :title => video_data.title,
       :duration => video_data.duration,
       :uploader => video_data.author.name,

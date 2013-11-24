@@ -5,13 +5,16 @@ class ListsController < ApplicationController
   end
 
   def show
+    gon.clear
     @list = List.find(params[:id])
     @videos = @list.videos
     @new_video = Video.new
+    gon.videos = @videos
   end
 
   def create
     @list = List.new(list_params)
+    logger.debug "asdfasdf: #{list_params[:tags_id]}"
     @list.user_id = current_user.id
     if @list.save
       user = User.find(current_user.id)
@@ -20,7 +23,7 @@ class ListsController < ApplicationController
       flash[:notice] = "Lista creada"
       redirect_to :controller => :home, :action => :index
     else
-      flash[:notice] = "Hubo un error"
+      flash[:alert] = "Hubo un error"
       redirect_to :controller => :home, :action => :index
     end
   end
@@ -36,13 +39,13 @@ class ListsController < ApplicationController
     if @list.users << current_user
       flash[:notice] = "Te has unido a la lista #{@list.name}!"
     else
-      flash[:notice] = "Algo extraño ha sucedido"
+      flash[:alert] = "Algo extraño ha sucedido"
     end
     redirect_to :controller => :home, :action => :index
   end
 
   private
   def list_params
-    params.require(:list).permit(:name, :description, :tag_ids)
+    params.require(:list).permit(:name, :description, :tag_ids => [])
   end
 end
