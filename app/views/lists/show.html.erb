@@ -3,15 +3,28 @@
     <h1><%= @list.name %></h1>
     <small> by <%= @list.user.username %></small>
     <p><%= @list.description %></p>
-    <% if not @videos.empty? %>
-      <% @videos.each do |vid| %>
-        <%= vid.title %> <%= vid.duration %> Likes: <%= vid.likes %>
-        <br />
-      <% end %>
-      
-    <% end %>
+    <div class="row">
+      <div id="playlist_box" class="span4 ">
+        <% if not @videos.empty? %>
+        <ul id="playlist">
+          <% @videos.each do |vid| %>
+            <li>
+              <div class="video_data" id=<%= vid.yid %>>
+                <span class="video_title"> <%= vid.title %> </span> 
+                <br>
+                <span class="video_duration"><%= secondsToDuration vid.duration %></span> 
+                <br>
+                Likes: <%= vid.likes %>
+              </div>
+            </li>
+          <% end %>
+        </ul>        
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="span8">
+
+  <div class="span5 offset1">
     <h3>Playlist</h3>
     <% if @videos.empty? %>
       No hay videos en esta lista. 
@@ -21,6 +34,7 @@
     <% end %>
   </div>
 </div>
-
+<div id="add_video">
 <%= render partial: "new_video" %>
+</div>
 <%= link_to "Volver", :root, :class => "btn btn-lg btn-inverse" %>

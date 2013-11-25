@@ -2,12 +2,12 @@ $ ->
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-  index = 0
+  window.index = 0
   jQuery("#player").tubeplayer
     width: 600 
     height: 450 
     allowFullScreen: "true" 
-    initialVideo: gon.videos[index].yid 
+    initialVideo: gon.videos[window.index].yid 
     preferredQuality: "default" 
     showControls: true
     showRelated: false
@@ -17,6 +17,10 @@ $ ->
     annotations: false
     loop: 0
     onPlay: () -> # after the play method is called
+
+    onPlayerPlaying: () -> #while player is playing
+      selector = "#" + gon.videos[window.index].yid
+      $(selector).addClass 'active_video'
 
     onPause: -> # after the pause method is called
 
@@ -29,11 +33,11 @@ $ ->
     onUnMute: -> # after the player is unmuted
 
     onPlayerEnded: () -> #after the player ends
-      if index < gon.videos.length
-        index += 1
-        jQuery("#player").tubeplayer "play", gon.videos[index].yid
+      selector = "#" + gon.videos[window.index].yid
+      $(selector).removeClass 'active_video'
+      if window.index < gon.videos.length
+        window.index += 1
+        jQuery("#player").tubeplayer "play", gon.videos[window.index].yid
       else
-        index = 0
+        window.index = 0
         jQuery("#player").tubeplayer "stop"
-
-
