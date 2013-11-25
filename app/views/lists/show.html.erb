@@ -1,6 +1,13 @@
 <div class="row">
+  <h1>
+    <span id="subtitle">Playlist</span> <%= @list.name %>
+    <% if not @list.tags.empty? %>
+      <% @list.tags.each do |tag| %>
+        <span class="tag"> <%= tag.name %> </span>
+      <% end %>
+    <% end %>
+  </h1> 
   <div class="span4">
-    <h1><span id="subtitle">Playlist</span> <%= @list.name %></h1>
     <% if @list.user.avatar != ""%>
         <%= image_tag(@list.user.avatar.html_safe, :alt=>"It's you!", :id =>  "playlist-avatar") %>
             <% else %>
