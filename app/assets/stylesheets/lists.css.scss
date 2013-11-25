@@ -7,24 +7,20 @@ ul, li {
   list-style-type:none;
 }
 
+#playlist-avatar {
+  width: 8%;
+  border-radius: 7px;
+}
+
 .active_video {
   font-size: 18px;
   color: rgb(26,188,156);
-  transition-property: all;
-  transition-duration: 150ms;
-  transition-timing-function: ease-in-out;
-  position: relative;
   border-radius: 1px;
   border-bottom: 1px rgb(52,73,94) solid;
   
   .video_title {
     font-weight: 900;
   }
-} 
-   
-.active_video:active {
-  right: 5%;
-  color:  rgb(29,206,171);  
 }
 
 .video_data {
@@ -35,10 +31,9 @@ ul, li {
   position: relative;
   border-bottom: rgb(52,73,94) solid;
   border-radius: 1px;
-  
 }
 
-.video_data:hover{
+.video_data:hover:not(.active_video){
   right: 5%;
   .video_title {
     color: rgb(26,188,156);
