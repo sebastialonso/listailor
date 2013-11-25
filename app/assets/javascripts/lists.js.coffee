@@ -11,7 +11,7 @@ $ ->
     preferredQuality: "default" 
     showControls: true
     showRelated: false
-    autoPlay: true
+    autoPlay: false
     autoHide: true
     theme: "light"
     annotations: false

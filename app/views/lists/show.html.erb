@@ -1,13 +1,19 @@
 <div class="row">
   <div class="span4">
-    <h1><%= @list.name %></h1>
+    <h1><span id="subtitle">Playlist</span> <%= @list.name %></h1>
     <% if @list.user.avatar != ""%>
         <%= image_tag(@list.user.avatar.html_safe, :alt=>"It's you!", :id =>  "playlist-avatar") %>
             <% else %>
       <%= image_tag("default-avatar.png") %>
     <% end %>
-    <small><%= @list.user.username %></small>
+    <span id="inplaylist_username"><small><%= @list.user.username %></small></span>
     <p><%= @list.description %></p>
+    <%= @list.users.length %> suscritos 
+    <% @list.users.each do |fan| %>
+      <% if fan.avatar != "" %>
+        <%= image_tag(fan.avatar.html_safe, :id =>  "playlist-avatar") %>
+      <% end %>
+    <% end %>
     <div class="row">
       <div id="playlist_box" class="span4 ">
         <% if not @videos.empty? %>
@@ -30,7 +36,6 @@
   </div>
 
   <div class="span5 offset1">
-    <h3>Playlist</h3>
     <% if @videos.empty? %>
       No hay videos en esta lista. 
       Agrega uno!
