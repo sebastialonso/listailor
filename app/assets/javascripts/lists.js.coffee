@@ -2,6 +2,14 @@ $ ->
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+  $("#all_tags").on "click", ->
+    if $("#all_tags").text() is "Show more"
+      $("#tag_bar").children(".hide_again").removeClass "tag_hidden"
+      $("#all_tags").text "Show less"
+    else
+      $("#tag_bar").children(".hide_again").addClass "tag_hidden"
+      $("#all_tags").text "Show more"
+
   window.index = 0
   jQuery("#player").tubeplayer
     width: 600 

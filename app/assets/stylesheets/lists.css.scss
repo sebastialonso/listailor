@@ -7,9 +7,26 @@ ul, li {
   list-style-type:none;
 }
 
+h1 {
+  float: left;
+}
+
+.tag_bar {
+  margin-left: 24%;
+  margin-top: 2.4%;
+}
+
 #subtitle {
   color: rgb(141,148,156);
 }
+
+.tag {
+  font-weight: bold;
+}
+
+.tag_hidden {
+    display: none;
+  }
 
 #inplaylist_username {
   color: black;

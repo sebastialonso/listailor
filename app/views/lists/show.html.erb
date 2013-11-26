@@ -1,12 +1,24 @@
-<div class="row">
-  <h1>
-    <span id="subtitle">Playlist</span> <%= @list.name %>
-    <% if not @list.tags.empty? %>
-      <% @list.tags.each do |tag| %>
-        <span class="tag"> <%= tag.name %> </span>
-      <% end %>
-    <% end %>
-  </h1> 
+<div id="playlist_header" class="row">
+  <div class="span12">
+    <h1>
+      <span id="subtitle">Playlist</span> <%= @list.name %>
+    </h1> 
+    <div id="tag_bar" class="tag_bar">
+        <% if not @list.tags.empty? %>
+          <% @list.tags.each_with_index do |tag, index| %>
+            <% if index <= 3 %>
+              <span class="tag"> <%= tag.name %> </span>
+            <% else %>
+              <span class="tag tag_hidden hide_again"> <%= tag.name %> </span>
+            <% end %>
+          <% end %>
+          <a id="all_tags" href="#" onClick="toggleTags"> Show all </a>
+        <% end %>
+    </div>
+  </div>
+</div>
+<br>
+<div id="playlist_content" class="row">
   <div class="span4">
     <% if @list.user.avatar != ""%>
         <%= image_tag(@list.user.avatar.html_safe, :alt=>"It's you!", :id =>  "playlist-avatar") %>
@@ -41,7 +53,6 @@
       </div>
     </div>
   </div>
-
   <div class="span5 offset1">
     <% if @videos.empty? %>
       No hay videos en esta lista. 
