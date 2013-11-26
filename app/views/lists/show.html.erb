@@ -12,7 +12,7 @@
               <span class="tag tag_hidden hide_again"> <%= tag.name %> </span>
             <% end %>
           <% end %>
-          <a id="all_tags" href="#" onClick="toggleTags"> Show all </a>
+          <a id="all_tags">Show all</a>
         <% end %>
     </div>
   </div>
@@ -23,14 +23,14 @@
     <% if @list.user.avatar != ""%>
         <%= image_tag(@list.user.avatar.html_safe, :alt=>"It's you!", :id =>  "playlist-avatar") %>
             <% else %>
-      <%= image_tag("default-avatar.png") %>
+      <%= image_tag("default-avatar.png", :id => "", :tooltip => "asd") %>
     <% end %>
     <span id="inplaylist_username"><small><%= @list.user.username %></small></span>
     <p><%= @list.description %></p>
     <%= @list.users.length %> suscritos 
     <% @list.users.each do |fan| %>
       <% if fan.avatar != "" %>
-        <%= image_tag(fan.avatar.html_safe, :id =>  "playlist-avatar") %>
+        <%= image_tag(fan.avatar.html_safe, :id =>  "playlist-avatar", :class => "playlist-fan-avatar", :rel => "tooltip", title:  fan.username) %>
       <% end %>
     <% end %>
     <div class="row">

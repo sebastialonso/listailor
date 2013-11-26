@@ -3,12 +3,18 @@ $ ->
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
   $("#all_tags").on "click", ->
-    if $("#all_tags").text() is "Show more"
+    if $("#all_tags").text() is "Show all"
       $("#tag_bar").children(".hide_again").removeClass "tag_hidden"
       $("#all_tags").text "Show less"
     else
       $("#tag_bar").children(".hide_again").addClass "tag_hidden"
-      $("#all_tags").text "Show more"
+      $("#all_tags").text "Show all"
+
+  $('.playlist-fan-avatar').tooltip({
+      #title: "asdad",
+      #title: $(this).data("tooltip"),
+      content: 'Some content!' 
+    })
 
   window.index = 0
   jQuery("#player").tubeplayer

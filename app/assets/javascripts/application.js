@@ -15,4 +15,5 @@
 //= require jQuery.tubeplayer
 //= require jQuery.tubeplayer.min
 //= require twitter/bootstrap
+//= require bootstrap-tooltip
 //= require_tree .
