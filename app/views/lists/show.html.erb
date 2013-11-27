@@ -70,7 +70,12 @@
     <% end %>
   </div>
 </div>
-<div id="add_video">
+<div id="temporal">
+  
+  <br>
+  <%= link_to "Volver", :root, :class => "btn btn-lg btn-inverse" %>
+</div>
+<div id="add_video" style="display: none;">
   <%= render partial: "new_video" %>    
 </div>
-<%= link_to "Volver", :root, :class => "btn btn-lg btn-inverse" %>
+

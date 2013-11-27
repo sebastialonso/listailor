@@ -86,6 +86,7 @@ h1 {
   overflow: hidden;
   position: absolute;
   border-top: rgb(52,73,94) solid;
+  margin-bottom: 20%;
 }
 
 .playlist_box .playlist_box_content { 
@@ -96,4 +97,8 @@ h1 {
 #add_video {
   margin-top: 10%;
   margin-left: 10%;
+}
+
+#temporal {
+  margin-top: 20%;
 }
