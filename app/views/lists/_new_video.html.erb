@@ -1,5 +1,5 @@
 <%= simple_form_for @new_video do |f| %>
-  <%= f.input :url %>
+  <%= f.input :url, :placeholder => "Url", label: false %>
   <%= f.hidden_field :list_id, value: @list.id %>
   <%= f.submit "Agregar", :class => "btn btn-lg btn-success" %>
 <% end %>

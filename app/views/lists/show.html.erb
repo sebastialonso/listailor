@@ -33,14 +33,20 @@
         <%= image_tag(fan.avatar.html_safe, :id =>  "playlist-avatar", :class => "playlist-fan-avatar", :rel => "tooltip", title:  fan.username) %>
       <% end %>
     <% end %>
+
+    <!-- Playlist -->
     <div class="row">
-      <div id="playlist_box" class="span4 playlist_box wrapper" >
+      <div id="add_video" class="form-group has-success">
+        <input id="add_video_field" type="text" class="form-control" value="Type something...">
+        <span class="input-icon fui-check-inverted"></span>
+      </div>
+      <div id="playlist_box" class="span4 playlist_box" >
         <div id="playlist_box_content" class="playlist_box_content">
           <% if not @videos.empty? %>
             <ul id="playlist">
-              <% @videos.each do |vid| %>
+              <% @videos.each_with_index do |vid, index| %>
                 <li>
-                  <div class="video_data" id=<%= vid.yid %>>
+                  <div class="video_data" id=<%= vid.yid %> rel=<%= index %>>
                     <span class="video_title"> <%= vid.title %> </span> 
                     <br>
                     <span class="video_duration"><%= secondsToDuration vid.duration %></span>
@@ -65,6 +71,6 @@
   </div>
 </div>
 <div id="add_video">
-    <%= render partial: "new_video" %>
-    </div>
+  <%= render partial: "new_video" %>    
+</div>
 <%= link_to "Volver", :root, :class => "btn btn-lg btn-inverse" %>

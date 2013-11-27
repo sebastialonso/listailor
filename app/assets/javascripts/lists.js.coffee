@@ -2,6 +2,8 @@ $ ->
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+
+  #Show all tags button
   $("#all_tags").on "click", ->
     if $("#all_tags").text() is "Show all"
       $("#tag_bar").children(".hide_again").removeClass "tag_hidden"
@@ -10,21 +12,24 @@ $ ->
       $("#tag_bar").children(".hide_again").addClass "tag_hidden"
       $("#all_tags").text "Show all"
 
+  #Activate tooltips
   $(".playlist-fan-avatar").tooltip({})
 
-  #$("#playlist_box").perfectScrollbar({
-  #  wheelSpeed: 30,
-  #  wheelPropagation: false,
-  #  minScrollbarLength: 10,
-  #  useBothWheelAxes: true,
-  #  useKeyboard: true
-  #})
+  #Activate the scrolling list
   $("#playlist_box").perfectScrollbar({
     minScrollbarLength: 20,
     useBothWheelAxes: false,
     useKeyboard: true
     })
 
+  $("#add_video_field").on "click", ->
+    $(this).val ""
+
+  $(".video_data").on "click", ->
+    $('div[rel="' + window.index + '"]').removeClass 'active_video'
+    window.index = $(this).attr("rel")
+    jQuery("#player").tubeplayer "play", gon.videos[window.index].yid
+  #Youtube player
   window.index = 0
   jQuery("#player").tubeplayer
     width: 600 

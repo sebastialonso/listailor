@@ -18,7 +18,10 @@ class VideosController < ApplicationController
       list.save
       redirect_to :controller => :lists, :action => :show, :id => list.id
     end
+  end
 
+  def fetchVideos
+    
   end
 
   private
