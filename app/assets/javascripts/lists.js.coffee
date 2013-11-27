@@ -26,9 +26,11 @@ $ ->
     $(this).val ""
 
   $(".video_data").on "click", ->
-    $('div[rel="' + window.index + '"]').removeClass 'active_video'
-    window.index = $(this).attr("rel")
-    jQuery("#player").tubeplayer "play", gon.videos[window.index].yid
+    unless $(this).hasClass 'active_video'
+      $('div[rel="' + window.index + '"]').removeClass 'active_video'
+      window.index = parseInt $(this).attr("rel")
+      jQuery("#player").tubeplayer "play", gon.videos[window.index].yid
+
   #Youtube player
   window.index = 0
   jQuery("#player").tubeplayer
