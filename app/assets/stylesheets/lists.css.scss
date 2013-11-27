@@ -50,7 +50,7 @@ h1 {
 }
 
 .video_data {
-  font-size: 18px;
+  font-size: 14px;
   transition-property: all;
   transition-duration: 190ms;
   transition-timing-function: ease-in-out;
@@ -64,5 +64,17 @@ h1 {
   .video_title {
     color: rgb(26,188,156);
   }
+}
 
+.playlist_box {
+  margin-top: 3%;
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  border-top: rgb(52,73,94) solid;
+}
+
+.playlist_box .playlist_box_content { 
+  width: 300px; 
+  height: 50px; 
 }

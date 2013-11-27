@@ -17,13 +17,6 @@ group :production, :staging do
   gem 'rails_12factor'
 end
 
-group :assets do
-  # Use SCSS for stylesheets
-  gem 'sass-rails', '~> 4.0.0'
-  # Use CoffeeScript for .js.coffee assets and views
-  gem 'coffee-rails', '~> 4.0.0'  
-end
-
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'  
@@ -60,10 +53,14 @@ gem 'simple_form'
 gem 'figaro'
 
 #Front-end design
-#gem 'flatui-rails'
 gem 'flatui'
-gem 'twitter-bootstrap-rails'
+gem "twitter-bootstrap-rails"
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'  
 gem "less-rails"
+gem "jquery-mousewheel-rails"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

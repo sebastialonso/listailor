@@ -10,10 +10,19 @@ $ ->
       $("#tag_bar").children(".hide_again").addClass "tag_hidden"
       $("#all_tags").text "Show all"
 
-  $('.playlist-fan-avatar').tooltip({
-      #title: "asdad",
-      #title: $(this).data("tooltip"),
-      content: 'Some content!' 
+  $(".playlist-fan-avatar").tooltip({})
+
+  #$("#playlist_box").perfectScrollbar({
+  #  wheelSpeed: 30,
+  #  wheelPropagation: false,
+  #  minScrollbarLength: 10,
+  #  useBothWheelAxes: true,
+  #  useKeyboard: true
+  #})
+  $("#playlist_box").perfectScrollbar({
+    minScrollbarLength: 20,
+    useBothWheelAxes: false,
+    useKeyboard: true
     })
 
   window.index = 0
