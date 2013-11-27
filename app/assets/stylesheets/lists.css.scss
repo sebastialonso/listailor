@@ -43,7 +43,22 @@ h1 {
   color: rgb(26,188,156);
   border-radius: 1px;
   border-bottom: 1px rgb(52,73,94) solid;
-  
+  border-right: rgb(52,73,94) solid;
+  border-radius: 6px;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, rgb(255, 255, 255)),
+    color-stop(0.74, rgb(219, 255, 255)),
+    color-stop(1, rgb(182, 255, 255))
+  );
+  background-image: -o-linear-gradient(right, rgb(255, 255, 255) 0%, rgb(219, 255, 255) 74%, rgb(182, 255, 255) 100%);
+  background-image: -moz-linear-gradient(right, rgb(255, 255, 255) 0%, rgb(219, 255, 255) 74%, rgb(182, 255, 255) 100%);
+  background-image: -webkit-linear-gradient(right, rgb(255, 255, 255) 0%, rgb(219, 255, 255) 74%, rgb(182, 255, 255) 100%);
+  background-image: -ms-linear-gradient(right, rgb(255, 255, 255) 0%, rgb(219, 255, 255) 74%, rgb(182, 255, 255) 100%);
+  background-image: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(219, 255, 255) 74%, rgb(182, 255, 255) 100%);
+
   .video_title {
     font-weight: 900;
   }
