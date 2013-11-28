@@ -14,8 +14,10 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    logger.debug "asdfasdf: #{list_params[:tags_id]}"
     @list.user_id = current_user.id
+    params[:list][:tags].split(",").each do |id|
+       @list.tags << Tag.find(id.to_i)
+     end
     if @list.save
       user = User.find(current_user.id)
       user.lists << @list
@@ -46,6 +48,6 @@ class ListsController < ApplicationController
 
   private
   def list_params
-    params.require(:list).permit(:name, :description, :tag_ids => [])
+    params.require(:list).permit(:name, :description)
   end
 end

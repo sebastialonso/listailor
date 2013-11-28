@@ -13,6 +13,7 @@
  *= require bootstrap
  *= require flat-ui
  *= require perfect-scrollbar
+ *= require token-input-facebook
  */
 
 #body {

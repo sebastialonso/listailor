@@ -1,6 +1,8 @@
 <%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.association :tags, collection: @tags, as: :check_boxes %>
-  <%= f.submit "Crear", :class => "btn btn-lg btn-success" %>
+  <%= f.input :name, id: "list_name", placeholder: 'Un nombre genial...' %>
+  <%= f.input :description, id: "list_description", placeholder: "Toda gran lista necesita una descripción..." %>
+  <br>
+  <label style="margin-top: -2%;"> Tags </label>
+  <%= f.text_field :tags, id: "tag_list", :class =>  "autocomplete_tag_box" %>
+  <%= f.submit "Crear", :class => "btn btn-large btn-success", id: "create_list_btn" %>
 <% end %>

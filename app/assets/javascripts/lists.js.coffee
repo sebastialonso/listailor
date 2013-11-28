@@ -3,6 +3,16 @@ $ ->
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+  $("#tag_list").tokenInput("/tags/index.json", {
+    theme: "facebook"
+    hintText: "Tipea un género musical o algo..."
+    searchingText: "Buscando tags existentes..."
+    preventDuplicate: true
+    deleteText: "&#10060;"
+    });
+
+  $("#tag_list").tokenInput('add',{ name: "algún estilo shuer loco"})
+
   #Show all tags button
   $("#all_tags").on "click", ->
     if $("#all_tags").text() is "Show all"

@@ -17,4 +17,5 @@
 //= require bootstrap-tooltip
 //= require jquery.mousewheel
 //= require perfect-scrollbar
+//= require jquery.tokeninput
 //= require_tree .
