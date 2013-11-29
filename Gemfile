@@ -62,6 +62,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem "less-rails"
 gem "jquery-mousewheel-rails"
 
+#In-place editing
+gem 'best_in_place'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

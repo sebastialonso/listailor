@@ -1,6 +1,5 @@
 Listailor::Application.routes.draw do
-  
-  get "tags/index"
+  get 'tags/index'
   root 'home#index'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :lists

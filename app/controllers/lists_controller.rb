@@ -1,7 +1,8 @@
 class ListsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create, :join]
 
-  def index
+  def edit
+    
   end
 
   def show

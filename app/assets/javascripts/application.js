@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jQuery.tubeplayer.min
+//= require jQuery.tubeplayer
 //= require twitter/bootstrap
 //= require bootstrap-tooltip
-//= require jquery.mousewheel
 //= require perfect-scrollbar
+//= require jquery.mousewheel
 //= require jquery.tokeninput
 //= require_tree .
